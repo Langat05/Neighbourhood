@@ -1,8 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
-
 {% block content %}
 
 <div class="container">
@@ -11,34 +8,32 @@
       <h1>Health Services</h1>
     </div>
   </div>
-<div class="row"> 
-  <div class="col-md-6">
-  <div class="card" style="width: 25rem;margin-top:10px;" >
-  <div class="card-body">
-      <h3 class="card-title" data-toggle="modal" data-target="#{{health.id}}">{{health.name}}</h3>
-  </div>
-</div>
-
-</div>
-<div class="modal fade" id="{{health.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content text-center">
-      <div class="modal-header text-center">
-        <h3 class="text-center">{{health.name}}</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card" style="width: 25rem;margin-top:10px;">
+        <div class="card-body">
+          <h3 class="card-title" data-toggle="modal" data-target="#{{health.id}}">{{health.name}}</h3>
+        </div>
       </div>
-      <div class="modal-body">
-        <img class="card-img-top" src="{{health.logo.url}}" height=200 width=100 >
-
-        <h4 class="text-center">Contacts</h4>
-        <p><span class="bold">Phone Number:</span> {{health.contact}}</p>
-        <p><span class="bold">Address:</span> {{health.address}}</p>
-        <p><span class="bold">Email:</span> {{health.email}}</p>
+    </div>
+    <div class="modal fade" id="{{health.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header text-center">
+            <h3 class="text-center">{{health.name}}</h3>
+          </div>
+          <div class="modal-body">
+            <img class="card-img-top" src="{{health.logo.url}}" height=200 width=100>
+            <h4 class="text-center">Contacts</h4>
+            <p><span class="bold">Phone Number:</span> {{health.contact}}</p>
+            <p><span class="bold">Address:</span> {{health.address}}</p>
+            <p><span class="bold">Email:</span> {{health.email}}</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-</div>
 </div>
 
 {% endblock %}

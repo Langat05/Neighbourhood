@@ -1,23 +1,22 @@
 {% load bootstrap4 %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
     {% if title %}
     <title>{{title}}</title>
     {% else %}
     <title>Nyumbakumi</title>
     {% endif %}
-
     {% block styles %}
     {% bootstrap_css %}
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
-
     <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
