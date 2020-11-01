@@ -6,13 +6,13 @@
 {% block content %}
 
 <div class="container">
-  <div class="row top">
+  <div class="row"> <br><br>
     <div class="col-md-12"></div>
   </div>
 
 <div class="text-center">
   <div class="user-image">
-    <img src="{{profile.avatar.url}}" class="gallery-image" alt=""  width=30 height=30>
+    <img src="{{profile.avatar.url}}" class="gallery-image" alt=""  width=150 height=150 style="border-radius:50%">
   </div>
   <p style="font-size: 22px; font-weight:bold;margin:auto; padding:2px;">{{profile.username}}</p>
   <p class="card-text" style="font-size:20px;font-weight:bold;">{{profile.description |safe}}</p>

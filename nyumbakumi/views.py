@@ -112,4 +112,20 @@ def new_post(request):
     else:
         form = PostForm()
 
-    return render(request,'post_form.html',{"form":form})      
+    return render(request,'post_form.html',{"form":form})    
+    
+
+@login_required(login_url='/accounts/login/')
+def search_results(request):
+    if 'post' in request.GET and request.GET["post"]:
+        search_term = request.GET.get("post")
+        searched_posts = Post.search_post(search_term)
+        message=f"{search_term}"
+
+        print(searched_posts)
+
+        return render(request,'search.html',{"message":message,"posts":searched_posts})
+
+    else:
+        message="You haven't searched for any term"
+        return render(request,'search.html',{"message":message})    
