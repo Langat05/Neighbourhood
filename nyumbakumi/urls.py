@@ -13,6 +13,7 @@ urlpatterns = [
     path('authorities', views.authorities, name='authorities'),
     path('health', views.health, name='health'),
     path('post',views.post, name='post'),
+    path('new/post', views.new_post, name='new-post'),
 ]
 
 if settings.DEBUG:
