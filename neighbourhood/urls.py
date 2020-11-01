@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('nyumbakumi.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('logout/', views.logout, {"next_page":'/'}, name="logout"),
+    path('logout/', views.LogoutView, {"next_page":'/'}, name="logout"),
     path('tinymce',include('tinymce.urls')),
 ]
