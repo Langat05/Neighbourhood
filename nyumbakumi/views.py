@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm
-from .models import Profile
+from .models import Profile, healthservices
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 
@@ -75,4 +75,12 @@ def authorities(request):
     profile=Profile.objects.get(username=current_user)
     authorities = Authorities.objects.filter(neighbourhood=profile.neighbourhood)
 
-    return render(request,'authorities.html',{"authorities":authorities})        
+    return render(request,'authorities.html',{"authorities":authorities})   
+
+@login_required(login_url='/accounts/login/')
+def health(request):
+    current_user=request.user
+    profile=Profile.objects.get(username=current_user)
+    healthservices = Health.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request,'health.html',{"healthservices":healthservices})         
