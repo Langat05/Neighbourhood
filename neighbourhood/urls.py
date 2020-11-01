@@ -20,9 +20,9 @@ from django.contrib.auth import views
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin', admin.site.urls),
     path('', include('nyumbakumi.urls')),
     path('accounts/', include('registration.backends.simple.urls')),
-    path('logout/', auth.views.LogoutView.as_view(template_name='registration/logged_out.html', next_page=None), name="logout"),
+    path('logout', auth.views.LogoutView.as_view(template_name='registration/logged_out.html', next_page=None), name="logout"),
     path('tinymce',include('tinymce.urls')),
 ]
