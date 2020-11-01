@@ -6,7 +6,7 @@ class ProfileForm(forms.ModelForm):
         model=Profile
         exclude=['username']
 
-class BlogPostForm(forms.ModelForm):
+class PostForm(forms.ModelForm):
     class Meta:
-        model=BlogPost
+        model= Post
         exclude=['username','neighbourhood','avatar']        
