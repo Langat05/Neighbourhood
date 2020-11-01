@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from .forms import ProfileForm
-from .models import Profile, Authorities, Health
+from .models import Profile, Authorities, Health, Post
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 
@@ -83,4 +83,12 @@ def health(request):
     profile=Profile.objects.get(username=current_user)
  
 
-    return render(request,'health.html',{"health":health})         
+    return render(request,'health.html',{"health":health})     
+
+@login_required(login_url='/accounts/login/')
+def post(request):
+    current_user=request.user
+    profile=Profile.objects.get(username=current_user)
+    posts = Post.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request,'post.html',{"posts":posts})        
