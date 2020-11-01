@@ -4,6 +4,7 @@ from .forms import ProfileForm, PostForm
 from .models import Profile, Authorities, Health, Post
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse,Http404,HttpResponseRedirect
+from django.contrib.auth.models import User
 
 # Create your views here.
 def index(request):

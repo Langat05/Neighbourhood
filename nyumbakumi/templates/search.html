@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<div class="container">
+    <div class="row text-center">
+        {% if posts %}
+        <h2> Found {{posts|length}} results with the search term "{{message}}"</h2>
+        {% else %}
+        <h2> Found 0 results for the search term "{{message}}"</h2>
+        {% endif %}
+    </div>
+    {% if posts %}
+    <div class="text-center">
+        <div class="panel" style="width: 40rem;">
+            <div class="panel-body">
+                {% for post in posts%}
+                <div class="card" style="width: 20rem;">
+                    <div class="card-body">
+                        <a href="/view/post/{{post.id}}" style="color:black;text-decoration:none;margin:auto;">
+                            <h5 class="card-title">{{post.title}}</h5>
+                        </a>
+                        <a href="/user/{{post.username}}" style="color:black;text-decoration:none;margin:auto;">
+                            <h6 class="card-subtitle mb-2 text-muted">{{post.username}}</h6>
+                        </a>
+                        <p class="card-text">{{post.post|truncatechars:200 | safe}}</p>
+                        <a href="/view/post/{{post.id}}" class="card-link">Continue reading</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {%endif %}
+</div>
+<style>
+    h2 {
+        color: white;
+    }
+</style>
+{% endblock %}

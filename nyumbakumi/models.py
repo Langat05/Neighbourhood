@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from tinymce.models import HTMLField
 import datetime as dt
+from django.db.models import Q
 
 # Create your models here.
 
@@ -62,4 +63,9 @@ class Post(models.Model):
     avatar = models.ImageField(upload_to='avatars/')
 
     def __str__(self):
-        return self.title              
+        return self.title    
+
+    @classmethod
+    def search_post(cls,search_term):
+        posts = cls.objects.filter(Q(username__username=search_term) | Q(neighbourhood__neighbourhood=search_term) | Q(title__icontains=search_term))
+        return posts              
