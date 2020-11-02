@@ -28,6 +28,8 @@ pip install -r requirements.txt
 
 - Run python3 manage.py runserver to launch the app
 
+# Codebeat
+[![codebeat badge](https://codebeat.co/badges/eed7d9ff-d782-4d21-b920-d55fb7a71452)](https://codebeat.co/projects/github-com-langat05-neighbourhood-master)
 
 # Technologies Used
 - Python3
