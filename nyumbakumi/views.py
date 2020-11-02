@@ -97,7 +97,7 @@ def authorities(request):
 def health(request):
     current_user=request.user
     profile=Profile.objects.get(username=current_user)
- 
+    health = Health.objects.filter(neighbourhood=profile.neighbourhood)
 
     return render(request,'health.html',{"health":health})     
 
