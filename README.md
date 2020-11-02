@@ -8,7 +8,7 @@
 
 
 ## Description
-- Neighbourhood project is about how people living in an area can get the necessary services easily. The fraternity can share posts which relates to them and the neighbourhood is kept updated by reading various posts. The user needs to register and select his or her neighbourhood. The user can only see the post or access the services for example the authorities only from his or her neighbourhood. The users can also change their neighbourhood at will.
+Neighbourhood project is about how people living in an area can get the necessary services easily. The fraternity can share posts which relates to them and the neighbourhood is kept updated by reading various posts. The user needs to register and select his or her neighbourhood. The user can only see the post or access the services for example the authorities only from his or her neighbourhood. The users can also change their neighbourhood at will.
 
 # Screenshot of the application
 
