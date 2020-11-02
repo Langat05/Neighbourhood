@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from .forms import ProfileForm, PostForm
-from .models import Profile, Authorities, Health, Post
+from .forms import *
+from .models import *
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.models import User
@@ -17,6 +17,21 @@ def index(request):
         return redirect('create-profile')
 
     return render(request,'index.html')
+
+def registration(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            form.save()
+            return redirect('login')
+    else:
+        form = RegisterForm()
+    context = {
+        'form':form,
+    }
+    return render(request, 'registration/register.html', context)
+
 
 @login_required(login_url='/accounts/login/')
 def my_profile(request):
